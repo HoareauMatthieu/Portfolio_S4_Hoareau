@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mettre ici les styles "globaux" */
+
+@layer components {
+ 
+    .titreh1 {
+        @apply pt-5 text-center text-4xl sm:text-5xl lg:text-6xl
+    }
+
+    .titreh2 {
+        @apply text-3xl sm:text-4xl lg:text-5xl
+    }
+
+    ::-webkit-calendar-picker-indicator {
+        @apply dark:invert;
+    }
+}
+
+
+html {
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><circle cx='25' cy='15' r='10' stroke='white' fill='none'/></svg>"), auto;
+}
+
+@keyframes scrolltxt {
+  0% {
+    transform: translate(0,0);
+  }
+  100% {
+    transform: translate(-100%,0);
+  }
+}
+
+.scrolltxt {
+  animation: scrolltxt 10s linear infinite;
+}
+
+
+.boxcontainer{
+  position: relative;
+  object-fit: cover;
+
+}
+.boxcontainer video{
+  width: 100%;
+  height: 100%;
+
+}
+
+.banner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: multiply;
+}
+
+#description {
+  display: none;
+}
+
+.reveal {
+  @apply relative transform -translate-x-[50px] opacity-0 transition duration-1000 ease-out;
+}
+
+.reveal.active {
+  @apply translate-x-0 opacity-100;
+}
+
